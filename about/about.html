@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Floin</title>
+  <meta name="description" content="Floin 프로젝트에 대한 간결한 설명입니다." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="../style.css" /> 
+  <style>
+    /* About 페이지 전용 스타일 (수정됨: 글자 크기 축소 및 상단 배치) */
+    .about-section {
+      min-height: calc(100vh - 60px - 50px - 50px); /* Top-ribbon, Header, Footer notice 고려 */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* justify-content: center; // 중앙 정렬 대신 */
+      justify-content: flex-start; /* 상단 정렬 */
+      text-align: center;
+      padding: 60px 16px 40px; /* 상단 패딩을 줄여서 위로 올림 (기존 40px에서 60px은 유지, 필요 시 더 줄일 수 있음) */
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .about-section h1 {
+      font-size: 2.2rem; /* 3rem -> 2.2rem (축소) */
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 15px; /* 간격 축소 */
+      margin-top: 0;
+    }
+    .about-section p {
+      font-size: 1.15rem; /* 1.4rem -> 1.15rem (축소) */
+      line-height: 1.6; /* 줄 간격 축소 */
+      color: #333;
+      font-weight: 600;
+      margin: 8px 0; /* 단락 간격 축소 */
+    }
+    .about-section small {
+      display: block;
+      margin-top: 25px; /* 간격 축소 */
+      color: var(--muted);
+      font-size: 0.9rem; /* 1rem -> 0.9rem (축소) */
+    }
+  </style>
+</head>
+<body>
+  <div class="top-ribbon" role="banner">
+    <div class="top-ribbon__inner">Flow Through Interact</div>
+  </div>
+
+  <header class="site-header" aria-label="주요 헤더">
+    <div class="container">
+      <a class="brand" href="/" aria-label="Floin 홈">
+        <img src="../assets/images/logo.png" alt="Floin" class="brand__img" /> </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/about.html" class="nav__link" aria-current="page">About</a>
+        <a href="../archive/archive.html" class="nav__link">Archive</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="about-section">
+      <h1>Flow Through Interact <br> 중요한 건 목소리에 담긴 진심 아닐까요</h1><br>
+      
+      <p>
+        FLOIN은 마음속에 떠오른 사람에게 <br />
+        진심을 담은 목소리로 교류하는 전시 아카이브 프로젝트입니다.
+      </p>
+      <p>
+        이 공간 속에서 사용자님의 목소리는 기록으로 흐르며, <br />
+        전시 이후에는 안전하게 소멸됩니다.
+      </p>
+      
+      <small>
+        전시 기간 외에는 어떠한 데이터도 저장되거나 2차 활용되지 않습니다.
+      </small>
+    </section>
+  </main>
+
+  <div class="site-footer__notice" role="contentinfo">
+    <div class="container">
+      <small>※ 전시 종료 후 모든 음성과 개인정보는 즉시 폐기됩니다. © 2025 Floin</small>
+    </div>
+  </div>
+</body>
+</html>
