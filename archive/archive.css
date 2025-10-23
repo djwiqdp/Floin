@@ -1,0 +1,132 @@
+/* archive.css */
+
+/* Floin 기본 스타일 파일인 style.css에 정의된 변수들을 사용합니다. */
+
+/* Archive 페이지 전체 컨테이너 */
+.archive-section {
+  padding: 40px 16px 60px;
+  max-width: 1200px; /* 전체 섹션의 최대 너비 */
+  margin: 0 auto;
+  color: var(--fg);
+}
+
+/* 1. 팀 설명 헤더 영역 */
+.archive-team-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 16px;
+}
+.archive-team-header h1 {
+    font-size: 2.5rem; 
+    font-weight: 800;
+    color: var(--fg); /* 기본 텍스트 색상 */
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+.archive-team-header p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* 2. 이미지 갤러리 그리드 */
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 모바일 기본 1열 */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.archive-grid__item {
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    cursor: pointer;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.archive-grid__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.15);
+}
+
+.archive-grid__media {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity .3s ease;
+}
+
+/* 비디오 아이템 */
+.archive-grid__item.is-video .archive-grid__media {
+    aspect-ratio: 16 / 9; /* 영상 비율 유지 */
+    object-fit: cover;
+}
+
+/* 이미지 아이템 (비디오가 아닐 경우) */
+.archive-grid__item:not(.is-video) {
+    aspect-ratio: 4 / 3; /* 이미지 비율 통일 */
+}
+
+.archive-grid__item:not(.is-video) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 이미지 위에 텍스트 오버레이 */
+.archive-grid__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    background: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.1) 100%);
+    color: #fff;
+    transition: transform .3s ease;
+}
+
+.archive-grid__info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+    line-height: 1.4;
+}
+
+.archive-grid__info p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    opacity: 0.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 두 줄까지 표시 */
+    -webkit-box-orient: vertical;
+}
+
+
+/* 반응형 디자인 */
+
+/* 태블릿 (600px 이상) */
+@media (min-width: 600px) {
+    .archive-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2열 */
+    }
+}
+
+/* 데스크톱 (900px 이상) */
+@media (min-width: 900px) {
+    .archive-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3열 */
+    }
+    .archive-team-header {
+        margin-bottom: 80px;
+    }
+} /* 👈 닫는 중괄호 추가 완료 */
