@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Floin – Flow Through Interact</title>
+  <meta name="description" content="떠오르는 사람에게 목소리를 전하세요. 전시용 웹 아카이브." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="top-ribbon" role="banner">
+    <div class="top-ribbon__inner">Flow Through Interact</div>
+  </div>
+
+  <header class="site-header" aria-label="주요 헤더">
+    <div class="container">
+      <a class="brand" href="/" aria-label="Floin 홈">
+        <img src="./assets/images/logo.png" alt="Floin" class="brand__img" />
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="about/about.html" class="nav__link">About</a>
+        <a href="archive/archive.html" class="nav__link">Archive</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="stage">
+      <div class="hero__copy">
+        <h1 class="sr-only">떠오르는 사람에게 목소리를 보내는 전시</h1>
+        <p class="hero__desc">
+          보고싶은 사람에게 목소리를 전달해보세요💌<br />
+          전시기간 동안 목소리는 저장되고 이후부터 안전하게 사라져요
+        </p>
+      </div>
+
+      <div class="carousel" aria-roledescription="carousel">
+        <div class="carousel__viewport" id="carouselViewport" aria-live="polite">
+          <article class="vcard" data-idx="0" tabindex="-1" aria-hidden="true" data-audio-src="./assets/audio/sample_short.mp3" data-duration="12">
+            <header class="vcard__header">
+              <h3 class="vcard__title">국현에게 전하는 보이스</h3>
+              <small class="vcard__meta">김예원</small>
+            </header>
+            <div class="vcard__media is-placeholder" aria-hidden="true"></div>
+            <button class="pill" type="button">보이스 듣기</button>
+          </article>
+
+          <article class="vcard" data-idx="1" tabindex="0" aria-hidden="false" data-audio-src="./assets/audio/sample_medium.mp3" data-duration="25">
+            <header class="vcard__header">
+              <h3 class="vcard__title">다은에게 전하는 보이스</h3>
+              <small class="vcard__meta">신국현</small>
+            </header>
+            <div class="vcard__media" style="background-image:url('./assets/images/sample2.png')"></div>
+            <button class="pill" type="button">보이스 듣기</button>
+          </article>
+
+          <article class="vcard vcard--active" data-idx="2" tabindex="0" aria-current="true" aria-hidden="false" data-audio-src="./assets/audio/sample_long.mp3" data-duration="68">
+            <header class="vcard__header">
+              <h3 class="vcard__title">예원에게 전하는 보이스</h3>
+              <small class="vcard__meta">최다은</small>
+            </header>
+            <div class="vcard__media vcard__media--center" style="background-image:url('./assets/images/sample3.png')"></div>
+            <button class="pill pill--strong" type="button">보이스 듣기</button>
+          </article>
+
+          <article class="vcard" data-idx="3" tabindex="0" aria-hidden="false" data-audio-src="./assets/audio/sample_short.mp3" data-duration="12">
+            <header class="vcard__header">
+              <h3 class="vcard__title">하린에게 전하는 보이스</h3>
+              <small class="vcard__meta">박민교</small>
+            </header>
+            <div class="vcard__media" style="background-image:url('./assets/images/sample1.png')"></div>
+            <button class="pill" type="button">보이스 듣기</button>
+          </article>
+
+          <article class="vcard" data-idx="4" tabindex="-1" aria-hidden="true" data-audio-src="./assets/audio/sample_medium.mp3" data-duration="25">
+            <header class="vcard__header">
+              <h3 class="vcard__title">민수에게 전하는 보이스</h3>
+              <small class="vcard__meta">김서현</small>
+            </header>
+            <div class="vcard__media is-placeholder" aria-hidden="true"></div>
+            <button class="pill" type="button">보이스 듣기</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="cta-arrow left" aria-label="이전" data-dir="-1">‹</button>
+  <button class="record-btn" aria-label="녹음 시작">
+    <img src="./assets/images/record.png" alt="" class="record-btn__img" />
+  </button>
+  <button class="cta-arrow right" aria-label="다음" data-dir="1">›</button>
+  <p class="hint" aria-hidden="true">Slide sideways</p>
+
+  <div class="site-footer__notice" role="contentinfo">
+    <div class="container">
+      <small>※ 전시 종료 후 모든 음성과 개인정보는 즉시 폐기됩니다. (저장·2차 활용 없음) © 2025 Floin</small>
+    </div>
+  </div>
+
+  <div class="player" aria-label="재생바">
+    <div class="player__inner">
+      <button class="player__btn play" aria-label="재생/일시정지">▶</button>
+      <div class="player__meta">
+        <strong class="player__title" id="playerTitle">다온에게 전하는 보이스</strong>
+        <span class="player__author" id="playerAuthor">이가현</span>
+      </div>
+      <div class="player__time" id="playerTime" aria-live="off">
+        <span class="cur" id="playerCurrentTime">00:00</span>
+        <span class="dur" id="playerDuration">01:08</span>
+      </div>
+      <div class="player__progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="player__bar" id="playerBar" style="width:0%"></span>
+      </div>
+    </div>
+  </div>
+
+  <audio id="mainAudioPlayer" style="display:none;"></audio>
+
+  <div class="modal-overlay" id="recordModal" aria-modal="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <h2 id="modalTitle">보이스 보내기</h2>
+      <div class="modal-body">
+        <p class="to-label">To.</p>
+        <input type="text" id="recipientInput" placeholder="마음을 전하고 싶은 사람의 이름을 적어주세요." class="recipient-input" />
+        <div class="record-status-area">
+          <div class="record-visual">
+            <button class="record-btn-modal" aria-label="녹음 시작/중지">
+              <img id="modalRecordIcon" src="./assets/images/play.png" alt="녹음 시작/정지 아이콘" />
+            </button>
+          </div>
+          <div class="record-time-wrapper">
+            <span id="currentTime">00:00</span>
+            <span id="recordedDuration">00:00</span>
+          </div>
+          <div class="record-progress-bar">
+            <div class="record-progress-fill" id="recordProgressFill"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-modal btn-cancel" id="modalCancel">취소</button>
+        <button class="btn-modal btn-confirm" id="modalNext" disabled>다음</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="coverModal" aria-modal="true" role="dialog" aria-labelledby="coverModalTitle">
+    <div class="modal-content cover-modal-content">
+      <h2 id="coverModalTitle">보이스 커버 제작하기</h2>
+      <div class="cover-modal-body">
+        <div class="image-selection-area">
+          <div class="basic-images-section">
+            <p class="section-title">기본 이미지</p>
+            <div class="image-grid">
+              <div class="image-option" data-src="./assets/images/sample1.png"></div>
+              <div class="image-option" data-src="./assets/images/sample2.png"></div>
+              <div class="image-option" data-src="./assets/images/sample3.png"></div>
+              <div class="image-option" data-src="./assets/images/sample4.png"></div>
+              <div class="image-option" data-src="./assets/images/sample5.png"></div>
+              <div class="image-option" data-src="./assets/images/sample6.png"></div>
+            </div>
+          </div>
+          <div class="webcam-section">
+            <p class="section-title">웹캠으로 촬영</p>
+            <div class="webcam-area" id="webcamArea">
+              <div class="webcam-preview">
+                <video id="webcamStream" autoplay playsinline style="display:none;"></video>
+                <canvas id="webcamCanvas" style="display:none;"></canvas>
+                <img id="webcamPlaceholder" src="./assets/images/camera-preview.png" alt="웹캠 미리보기" />
+                <button class="capture-btn" id="captureBtn" aria-label="촬영하기">
+                  <img src="./assets/images/camera.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="selected-cover-label">선택된 앨범 커버</p>
+        <div class="selected-cover-preview">
+          <div id="finalCoverPreview"></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-modal btn-cancel" id="coverModalCancel">취소</button>
+        <button class="btn-modal btn-confirm" id="coverModalNext" disabled>다음</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="fromModal" aria-modal="true" role="dialog" aria-labelledby="fromModalTitle">
+    <div class="modal-content from-modal-content">
+      <h2 id="fromModalTitle">보이스 보내기</h2>
+      <div class="modal-body">
+        <p class="to-label">From.</p>
+        <input type="text" id="senderInput" placeholder="보내는 사람의 이름을 적어주세요" class="recipient-input" />
+      </div>
+      <div class="modal-actions">
+        <button class="btn-modal btn-cancel" id="fromModalCancel">취소</button>
+        <button class="btn-modal btn-confirm" id="fromModalSend" disabled>전송</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="alert-overlay" id="finalAlertModal" aria-modal="true" role="alert" aria-labelledby="finalAlertTitle">
+    <div class="alert-content">
+      <p id="finalAlertTitle">님께 목소리를 전달할까요?</p>
+      <div class="alert-actions">
+        <button class="btn-cancel" id="finalAlertCancel">취소</button>
+        <button class="btn-confirm" id="finalAlertConfirm">전송</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-overlay" id="alertModal" aria-modal="true" role="alert" aria-labelledby="alertTitle">
+    <div class="alert-content">
+      <p id="alertTitle">작성 중인 내용이 사라집니다.<br />정말로 돌아가시겠어요?</p>
+      <div class="alert-actions">
+        <button class="btn-cancel" id="alertCancel">아니요</button>
+        <button class="btn-confirm" id="alertConfirm">네</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./scripts/carousel.js" defer></script>
+</body>
+</html>
